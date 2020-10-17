@@ -5,8 +5,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Knokoo Pedal Mod"
-Date "2020-09-26"
-Rev "v0.0"
+Date "2020-10-17"
+Rev "v0.1"
 Comp "Philipp Schilk"
 Comment1 ""
 Comment2 ""
@@ -300,10 +300,10 @@ Text Label 3400 5000 2    50   ~ 0
 Intensity
 Wire Wire Line
 	3100 5000 3400 5000
-Text Label 7500 4800 0    50   ~ 0
+Text Label 7500 5000 0    50   ~ 0
 Intensity
 Wire Wire Line
-	7850 4800 7500 4800
+	7850 5000 7500 5000
 Wire Wire Line
 	7850 4900 7300 4900
 Wire Wire Line
@@ -338,10 +338,10 @@ Wire Wire Line
 	5000 3000 5500 3000
 Text Label 5500 3000 2    50   ~ 0
 KNOKKO_ON
-Text Label 7350 5000 0    50   ~ 0
+Text Label 7350 4800 0    50   ~ 0
 KNOKKO_ON
 Wire Wire Line
-	7350 5000 7850 5000
+	7350 4800 7850 4800
 Wire Wire Line
 	2900 2900 3900 2900
 $Comp

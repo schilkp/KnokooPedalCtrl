@@ -69,7 +69,7 @@ int main(int argc, char** argv) {
     
     // ===== Config GPIO =====
     TRISAbits.TRISA0 = 1; // Pedal Input
-    TRUSAbits.TRISA1 = 1; // Pedal Sense Input
+    TRISAbits.TRISA1 = 1; // Pedal Sense Input
     TRISAbits.TRISA2 = 0; // KNOKOO Ouput
     TRISAbits.TRISA4 = 1; // Poti Input
     TRISAbits.TRISA5 = 0; // LED Output
