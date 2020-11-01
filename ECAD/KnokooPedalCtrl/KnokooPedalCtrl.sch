@@ -5,13 +5,13 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Knokoo Pedal Mod"
-Date "2020-10-17"
-Rev "v0.1"
+Date "2020-11-01"
+Rev "v0.2"
 Comp "Philipp Schilk"
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 ""
+Comment4 "https://github.com/TheSchilk/KnokooPedalCtrl"
 $EndDescr
 $Comp
 L power:GND #PWR0103
@@ -388,10 +388,8 @@ Wire Wire Line
 	7950 1500 7200 1500
 Text Label 7200 1500 0    50   ~ 0
 LED
-Text Label 7200 1400 0    50   ~ 0
+Text Label 6050 1400 0    50   ~ 0
 Duration_Sense
-Wire Wire Line
-	7200 1400 7950 1400
 $Comp
 L Device:R_Small R1
 U 1 1 5F810B39
@@ -558,23 +556,23 @@ Wire Wire Line
 $Comp
 L Mechanical:MountingHole H1
 U 1 1 5F86627B
-P 3300 6100
-F 0 "H1" H 3400 6146 50  0000 L CNN
-F 1 "MountingHole" H 3400 6055 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 3300 6100 50  0001 C CNN
-F 3 "~" H 3300 6100 50  0001 C CNN
-	1    3300 6100
+P 4350 4800
+F 0 "H1" H 4450 4846 50  0000 L CNN
+F 1 "MountingHole" H 4450 4755 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 4350 4800 50  0001 C CNN
+F 3 "~" H 4350 4800 50  0001 C CNN
+	1    4350 4800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole H2
 U 1 1 5F869A83
-P 3300 6400
-F 0 "H2" H 3400 6446 50  0000 L CNN
-F 1 "MountingHole" H 3400 6355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 3300 6400 50  0001 C CNN
-F 3 "~" H 3300 6400 50  0001 C CNN
-	1    3300 6400
+P 4350 5100
+F 0 "H2" H 4450 5146 50  0000 L CNN
+F 1 "MountingHole" H 4450 5055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 4350 5100 50  0001 C CNN
+F 3 "~" H 4350 5100 50  0001 C CNN
+	1    4350 5100
 	1    0    0    -1  
 $EndComp
 NoConn ~ 7850 5100
@@ -600,4 +598,63 @@ F 3 "~" H 2900 4900 50  0001 C CNN
 	1    2900 4900
 	-1   0    0    1   
 $EndComp
+Wire Wire Line
+	6050 1400 6800 1400
+$Comp
+L Device:R_Small R7
+U 1 1 5F9F03FE
+P 6800 1600
+F 0 "R7" H 6859 1646 50  0000 L CNN
+F 1 "DNS" H 6859 1555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 1600 50  0001 C CNN
+F 3 "~" H 6800 1600 50  0001 C CNN
+	1    6800 1600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R6
+U 1 1 5F9F0733
+P 6800 1200
+F 0 "R6" H 6859 1246 50  0000 L CNN
+F 1 "DNS" H 6859 1155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 1200 50  0001 C CNN
+F 3 "~" H 6800 1200 50  0001 C CNN
+	1    6800 1200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 1500 6800 1400
+Connection ~ 6800 1400
+Wire Wire Line
+	6800 1400 7950 1400
+Wire Wire Line
+	6800 1400 6800 1300
+Wire Wire Line
+	6800 1100 6800 1050
+$Comp
+L power:+5V #PWR0120
+U 1 1 5F9FC84C
+P 6800 1050
+F 0 "#PWR0120" H 6800 900 50  0001 C CNN
+F 1 "+5V" H 6815 1223 50  0000 C CNN
+F 2 "" H 6800 1050 50  0001 C CNN
+F 3 "" H 6800 1050 50  0001 C CNN
+	1    6800 1050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0121
+U 1 1 5F9FE8F3
+P 6800 1800
+F 0 "#PWR0121" H 6800 1550 50  0001 C CNN
+F 1 "GND" H 6800 1600 50  0000 C CNN
+F 2 "" H 6800 1800 50  0001 C CNN
+F 3 "" H 6800 1800 50  0001 C CNN
+	1    6800 1800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 1800 6800 1700
+Text Notes 6150 750  0    50   ~ 0
+R6/R7 May be used instead of a second\nPotentiometer to fix the timer duration.
 $EndSCHEMATC
