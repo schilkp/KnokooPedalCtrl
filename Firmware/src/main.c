@@ -1,9 +1,15 @@
-/* 
- * File:   main.c
- * Author: pschilk
- *
- * Created on September 26, 2020, 8:34 AM
- */
+
+// =================================================================
+//                  Knokoo FES150 Pedal Control
+//                      PIC12F1572 Firmware
+//                      Philipp Schilk 2020
+//
+// This was written fairly quickly without much second thought.
+// Please don't look to closely.
+// =================================================================
+
+
+// ======== PIC Fuses ==========================================================
 
 // CONFIG1
 #pragma config FOSC = INTOSC    // (INTOSC oscillator; I/O function on CLKIN pin)
@@ -22,8 +28,8 @@
 #pragma config LPBOREN = OFF    // Low Power Brown-out Reset enable bit (LPBOR is disabled)
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
-#include <pic.h>
-#include <stdint.h>
+
+// ======== Config =============================================================
 
 #define DEBOUNCE_TIME  25  // Time inputs are ignored after input in 10s of ms
 #define DBLPRESS_TIME  400 // Max interval to count as 'double press' in 10s of ms
@@ -31,10 +37,14 @@
 
 // Coefficients to determine min and max length:
 // Min length in seconds: ADCSCALE_BASE / 100
-// Max length in seconds: (ADCSCALE_BASE + ADCSCALE_MULT*2^10) / 100git com
+// Max length in seconds: (ADCSCALE_BASE + ADCSCALE_MULT*2^10) / 100
 #define ADCSCALE_MULT 90
 #define ADCSCALE_BASE 12000
 
+// ======== Code ===============================================================
+
+#include <pic.h>
+#include <stdint.h>
 
 uint32_t debounce_count;
 uint8_t debounce_prevstate;
@@ -122,6 +132,7 @@ int main(int argc, char** argv) {
 }
 
 void UI(uint8_t did_press){
+    // If you close your eyes, you can't see this mess of a state machine.
     switch(state){
         case state_off:
             LATAbits.LATA2 = 0;

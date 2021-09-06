@@ -17,7 +17,6 @@ was born.
 It is also not the quietest machine, so being able to turn it on and off only when actually 
 soldering has made using it much more pleasant. 
 
-
 ## How?
 
 This small PIC12F1572-based board sits between the Knokoo's Main PCB and the front intensity knob.  
@@ -39,33 +38,17 @@ If the pedal is unplugged, the board will disable itself and the unit will funct
 
 ## Installation
 
-### What you will need
-    
-    - The PCB (order using the Gerbers found in [Github Releases]())
-    - A PIC Programmer
-    - All parts on the BOM
-    - 
-
-
-### Board Assembly
-
-### Installation of Pedal Jack, LED, and Potentiometer
-
-### Cable Assembly
-
-### Installation
-
-
+[will follow shortly]
 
 ## Slight Modifications
 
 ### No Timer Potentiometer
 
-Instead of a second potentiometer, the timer duration can also be permantly fixed using the two resistors R6 and R7.  
+Instead of a second potentiometer, the timer duration can also be permanently fixed using resistors R6 and R7.  
 
-The duration will be approx `(Tmax)*(R6/(R6+R7)`  
+The duration will be approx `(15)*(R6/(R6+R7)` minutes
 
-(R6+R7) should be 10K at least. The Pins where the potentiometer would otherwise be connected to, should be left disconnected in this case.  
+(R6+R7) should be 10K at least. The pins where the potentiometer would otherwise be connected to should be left disconnected.
 
 ### No Pedal Detect
 
